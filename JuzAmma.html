@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصحف جزء عم</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مصحف جزء عم/
+            تظهر السورة في الأسفل عند النقر عليها/
+        </h1>
+    </header>
+    <main>
+        <div id="surah-list"></div>
+        <div id="surah-text" class="hidden">
+            <h2 id="surah-title"></h2>
+            <p id="surah-content"></p>
+            <button onclick="closeSurah()">إغلاق</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        direction: rtl;
+        text-align: center;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #008080;
+        color: white;
+        padding: 15px;
+        font-size: 24px;
+    }
+    #surah-list {
+        margin: 20px;
+    }
+    .surah {
+        background-color: white;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>مصحف جزء عم</h1>
+</header>
+<main>
+    <div id="surah-list"></div>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const surahs = [
+            "النبأ", "النازعات", "عبس", "التكوير", "الإنفطار", "المطففين", "الإنشقاق", "البروج", "الطارق", "الأعلى",
+            "الغاشية", "الفجر", "البلد", "الشمس", "الليل", "الضحى", "الشرح", "التين", "العلق", "القدر",
+            "البينة", "الزلزلة", "العاديات", "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", "قريش", "الماعون",
+            "الكوثر", "الكافرون", "النصر", "المسد", "الإخلاص", "الفلق", "الناس"
+        ];
+        const surahList = document.getElementById("surah-list");
+        surahs.forEach(surah => {
+            let div = document.createElement("div");
+            div.className = "surah";
+            div.textContent = surah;
+            div.onclick = function() {
+                alert("عرض السورة: " + surah);
+            };
+            surahList.appendChild(div);
+        });
+    });
+</script>
+</body>
+</html>
