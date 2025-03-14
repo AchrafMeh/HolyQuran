@@ -1,1 +1,2 @@
 # HolyQuran
+#JuzAmma.html
